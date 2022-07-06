@@ -1,0 +1,117 @@
+openapi: 3.0.1
+info:
+  title: OCOIntegration_api_finstructure
+  description: API Definition of OCOIntegration_api_finstructure
+  version: 1.0.1
+servers:
+  - url: https://10.10.0.69:8253/finstructure
+paths:
+  /Info:
+    get:
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /get-short-data-offers:
+    get:
+      parameters:
+      - name: "LastOfferId"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /get-vehicles:
+    get:
+      parameters:
+      - name: "LastVehicleId"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      - name: "Archived"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /get-cv-date-url:
+    get:
+      parameters:
+      - name: "Pernr"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /get-project-work-history:
+    get:
+      parameters:
+      - name: "Pernr"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.

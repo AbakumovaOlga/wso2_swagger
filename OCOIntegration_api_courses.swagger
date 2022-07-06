@@ -1,0 +1,89 @@
+openapi: 3.0.1
+info:
+  title: OCOIntegration_api_courses
+  description: API Definition of OCOIntegration_api_courses
+  version: 1.0.1
+servers:
+  - url: https://10.10.0.69:8253/courses
+paths:
+  /get-training-types:
+    get:
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /get-categories:
+    get:
+      parameters:
+      - name: "TrainingTypeId"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /get-course-details:
+    get:
+      parameters:
+      - name: "CourceId"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /get-courses:
+    get:
+      parameters:
+      - name: "TrainingCategoryId"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.

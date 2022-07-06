@@ -1,0 +1,117 @@
+openapi: 3.0.1
+info:
+  title: OCOIntegration_api_pd_accounting
+  description: API Definition of OCOIntegration_api_pd_accounting
+  version: 1.0.1
+servers:
+  - url: https://10.10.0.69:8253/accounting_pd
+paths:
+  /personaldata:
+    get:
+      parameters:
+      - name: "currentpernr"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /absences:
+    get:
+      parameters:
+      - name: "currentpernr"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      - name: "currentdate"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /employees:
+    get:
+      parameters:
+      - name: "currentpernr"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /org_structure:
+    get:
+      parameters:
+      - name: "currentcode"
+        in: "query"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /zps_exp2lotus_p:
+    post:
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.

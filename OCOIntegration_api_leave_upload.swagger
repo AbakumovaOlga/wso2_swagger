@@ -1,0 +1,68 @@
+openapi: 3.0.1
+info:
+  title: OCOIntegration_api_leave_upload
+  description: API Definition of OCOIntegration_api_leave_upload
+  version: 1.0.1
+servers:
+  - url: https://10.10.0.69:8253/leave_upload
+paths:
+  /create_actual_leave:
+    post:
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /create_annual_leave:
+    post:
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /create_compensatory_leave:
+    post:
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /create_work_on_weekends_holidays:
+    post:
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing.
+        '403':
+          description: Authorization information is invalid. 
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
